@@ -17,4 +17,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Steam Login Setup (Dummy, kann später mit echten
+// API-Routen mounten
+app.use('/api', marketplaceRoutes);
+
+// Server starten
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server läuft auf Port ${PORT}`);
+});
+
